@@ -101,11 +101,11 @@ def overall(p):
     num_H = p.count("H")
     num_L = p.count("L")
     if num_H > num_L:
-        ans = "H"
+        ans = "This player has a high potential\n to be a World Class player!"
     elif num_H == num_L:
-        ans = "A"
+        ans = "This player is average and well-rounded."
     else:
-        ans = "L"
+        ans = "This player still lacks of some abilities,\n more days to improve."
     return ans
  
 
