@@ -125,7 +125,7 @@ layout = [[labelsColumn,column1,column2,column3,column4,column5,column6],
 		[sg.Text("LongB Per90: Long Balls per 90 mins   Tackles Per90: Tackles per 90 mins   Inter Per90: Interceptions per 90 mins   DribbledP Per90: Dribbled Past per 90 mins   AerialDW Per90: Aerial Duels won per 90 mins", font=font)],
 		[sg.Text("")],
 		[sg.Button("Evaluate For",key="-Evaluate For-",size = (20, 1)),sg.Button("Evaluate Mid",key="-Evaluate Mid-",size = (20, 1)),sg.Button("Evaluate Def",key="-Evaluate Def-",size = (20, 1))],
-		[sg.Button("Clear",key="-Clear-",size = (10, 1)),sg.Button("Exit",key="-Exit-",size = (10 , 1))]]
+		[sg.Button("Clear",key="-Clear-",size = (10, 1))]]#,sg.Button("Exit",key="-Exit-",size = (10 , 1))
 		
 
 
@@ -139,35 +139,36 @@ while True:
 	#checking for press Exit button
 	if event == "-Evaluate Def-" :
 		value = float(values["-dps6-"])
-		result = fbs.sth_d(value)
-		window["-dpt6-"].update(result)
-	if event == "-Evaluate Def-" :
+		result1 = fbs.sth_d(value)
+		window["-dpt6-"].update(result1)
+		
 		value = float(values["-dps5-"])
-		result = fbs.aerial_d(value)
-		window["-dpt5-"].update(result)
-	if event == "-Evaluate Def-" :
+		result2 = fbs.aerial_d(value)
+		window["-dpt5-"].update(result2)
+		
 		value = float(values["-dps4-"])
-		result = fbs.longb_d(value)
-		window["-dpt4-"].update(result)
-	if event == "-Evaluate Def-" :
+		result3 = fbs.longb_d(value)
+		window["-dpt4-"].update(result3)
+		
 		value = float(values["-dps3-"])
-		result = fbs.dribbledp_d(value)
-		window["-dpt3-"].update(result)
-	if event == "-Evaluate Def-" :
+		result4 = fbs.dribbledp_d(value)
+		window["-dpt3-"].update(result4)
+		
 		value = float(values["-dps2-"])
-		result = fbs.inter_d(value)
-		window["-dpt2-"].update(result)
-	if event == "-Evaluate Def-" :
+		result5 = fbs.inter_d(value)
+		window["-dpt2-"].update(result5)
+		
 		value = float(values["-dps1-"])
-		result = fbs.tackles_d(value)
-		window["-dpt1-"].update(result)
-	if event == "-Evaluate Def-":
-		list1 = values["-dpt6-"], values["-dpt5-"], values["-dpt4-"], values["-dpt3-"], values["-dpt2-"], values["-dpt1-"]
+		result6 = fbs.tackles_d(value)
+		window["-dpt1-"].update(result6)
+		
+		#list1 = values["-dpt6-"], values["-dpt5-"], values["-dpt4-"], values["-dpt3-"], values["-dpt2-"], values["-dpt1-"]
+		list1 = result1, result2, result3, result4, result5, result6
 		result = fbs.overall(list1)
-		#[str(values["-dpt1-"]), str(values["-dpt2-"]), str(values["-dpt3-"]), str(values["-dpt4-"]), str(values["-dpt5-"])]
 		window["-result63-"].update(result, font=font2)
 
-	if event == "-Clear-":
+
+	elif event == "-Clear-":
 		window["-dpt6-"].update("")
 		window["-dpt5-"].update("")
 		window["-dpt4-"].update("")
@@ -209,7 +210,7 @@ while True:
 		window["-result63-"].update("")
 
 	#checking for press Exit button or close window
-	if event == "-Exit-" or event == sg.WIN_CLOSED:
+	elif event == sg.WIN_CLOSED: #event == "-Exit-" or 
 		break
 
 window.close()

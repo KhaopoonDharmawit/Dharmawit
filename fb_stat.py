@@ -1,44 +1,50 @@
 from itertools import count
 
 
-def sth_d(x):
-    if x >= 0.5:
+def blocks_d(x):
+    if x >= 0.7:
         ans = "H"
     else:
         ans = "L"
     return ans
 def aerial_d(x):
-    if x >= 0.5:
+    if x >= 4.0:
         ans = "H"
     else:
         ans = "L"
     return ans
 def longb_d(x):
-    if x >= 0.5:
+    if x >= 4.0:
         ans = "H"
     else:
         ans = "L"
     return ans
 def dribbledp_d(x):
-    if x >= 0.5:
+    if x <= 0.5:
         ans = "H"
     else:
         ans = "L"
     return ans
 def inter_d(x):
-    if x >= 0.5:
+    if x >= 1.0:
         ans = "H"
     else:
         ans = "L"
     return ans
 def tackles_d(x):
-    if x >= 0.5:
+    if x >= 1.0:
+        ans = "H"
+    else:
+        ans = "L"
+    return ans
+def tackles_m(x):
+    if x >= 2.0:
         ans = "H"
     else:
         ans = "L"
     return ans
 def longb_m(x):
-    if x >= 0.5:
+    if x >= 3.0:
         ans = "H"
     else:
         ans = "L"
@@ -50,49 +56,55 @@ def disp_m(x):
         ans = "L"
     return ans
 def dribbles_m(x):
-    if x >= 0.5:
+    if x >= 1.0:
         ans = "H"
     else:
         ans = "L"
     return ans
 def passsuc_m(x):
-    if x >= 75:
+    if x >= 75.0:
         ans = "H"
     else:
         ans = "L"
     return ans
 def keyp_m(x):
-    if x >= 0.5:
+    if x >= 2.0:
+        ans = "H"
+    else:
+        ans = "L"
+    return ans
+def aerial_f(x):
+    if x >= 3.5:
         ans = "H"
     else:
         ans = "L"
     return ans
 def disp_f(x):
-    if x >= 0.5:
+    if x <= 2.5:
         ans = "H"
     else:
         ans = "L"
     return ans
 def dribbles_f(x):
-    if x >= 0.5:
+    if x >= 2.5:
         ans = "H"
     else:
         ans = "L"
     return ans
 def keyp_f(x):
-    if x >= 0.5:
+    if x >= 1.5:
         ans = "H"
     else:
         ans = "L"
     return ans
 def shots_f(x):
-    if x >= 0.5:
+    if x >= 2.5:
         ans = "H"
     else:
         ans = "L"
     return ans
 def xG_f(x):
-    if x >= 0.5:
+    if x >= 0.5 :
         ans = "H"
     else:
         ans = "L"
