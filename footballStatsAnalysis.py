@@ -139,18 +139,15 @@ layout = [[labelsColumn,column1,column2,column3,column4,column5,column6],
 		[sg.Text("LongB Per90: Long Balls per 90 mins   Tackles Per90: Tackles per 90 mins   Inter Per90: Interceptions per 90 mins   DribbledP Per90: Dribbled Past per 90 mins   AerialDW Per90: Aerial Duels won per 90 mins   Blocks Per90: Blocks per 90 mins", font=font)],
 		[sg.Text("")],
 		[sg.Button("Evaluate For",key="-Evaluate For-",size = (20, 1)),sg.Button("Evaluate Mid",key="-Evaluate Mid-",size = (20, 1)),sg.Button("Evaluate Def",key="-Evaluate Def-",size = (20, 1))],
-		[sg.Button("Clear",key="-Clear-",size = (10, 1))]]#,sg.Button("Exit",key="-Exit-",size = (10 , 1))
+		[sg.Button("Clear",key="-Clear-",size = (10, 1))]]
 		
 
 
-# Create the window
 window = sg.Window("Football Player Stat Analysis", layout, size=(875,550))
 
-# Create an event loop
 while True:
 	event, values = window.read()
 	
-	#checking for press Exit button
 	if event == "-Evaluate Def-" :
 		value1 = float(values["-dps6-"])
 		result1 = fbs.blocks_d(value1)
@@ -176,7 +173,6 @@ while True:
 		result6 = fbs.tackles_d(value6)
 		window["-dpt1-"].update(result6)
 		
-		#list1 = values["-dpt6-"], values["-dpt5-"], values["-dpt4-"], values["-dpt3-"], values["-dpt2-"], values["-dpt1-"]
 		list1 = result1, result2, result3, result4, result5, result6
 		result = fbs.overall(list1)
 		window["-result63-"].update(result, font=font2)
@@ -281,8 +277,7 @@ while True:
 		window["-result62-"].update("")
 		window["-result63-"].update("")
 
-	#checking for press Exit button or close window
-	elif event == sg.WIN_CLOSED: #event == "-Exit-" or 
+	elif event == sg.WIN_CLOSED:  
 		break
 
 window.close()
