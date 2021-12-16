@@ -123,16 +123,6 @@ column6 = sg.Column([
 	[sg.Text("",key="-result63-")],
 	[sg.Text("")]])
 
-column7 = sg.Column([
-	[sg.Text("")],
-	[sg.In(key='-foverall-',size = (20, 2))],
-	[sg.Text("")],
-	[sg.Text("")],
-	[sg.In(key='-moverall-',size = (20, 2))],
-	[sg.Text("")],
-	[sg.Text("")],
-	[sg.In(key='-doverall-',size = (20, 2))],
-	[sg.Text("")]])
 	
 layout = [[labelsColumn,column1,column2,column3,column4,column5,column6],
 		[sg.Text("xG Per90: Expected Goal per 90 mins   Shots Per90: Total Shots per 90 mins   KeyP Per90: Key Passes per 90 mins   Dribbles Per90: Dribbles per 90 mins   Disp Per90: Dispossessed per 90 mins   PassSuc %: Pass Success Percentage", font=font)],
